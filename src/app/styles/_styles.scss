@@ -1,0 +1,89 @@
+body {
+  background: $background-grey-color !important;
+  font-family: $quicksand;
+  cursor: pointer;
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    padding: 50px 0;
+    height: 100% !important;
+    color: $grey;
+    background: $major-dark-blue;
+  }
+
+  .header {
+    color: $dark-grey;
+    min-height: 120px;
+    line-height: 125px;
+  }
+
+  .initials-avatar {
+    background: $major-dark-blue;
+    border-radius: 50%;
+    color: $white;
+    font-style: normal;
+    font-family: $quicksand;
+    font-weight: 400;
+    text-transform: none;
+    text-decoration: none;
+    margin: 0 10px;
+    min-width: 40px;
+    min-height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .page-title {
+    font-size: 1.5em;
+    color: $dark-grey;
+    line-height: 50px;
+  }
+
+  .major-content {
+    margin-bottom: 30px;
+  }
+
+  .green-color {
+    color: $green;
+  }
+  .red-color {
+    color: $red;
+  }
+}
+
+.max-page-size {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.theme-green {
+  .bs-datepicker-head {
+    background-color: $major-dark-blue;
+  }
+
+  .bs-datepicker-body {
+    table {
+      td span.selected,
+      td.selected span,
+      td span[class*="select-"]:after,
+      td[class*="select-"] span:after {
+        background-color: $major-dark-blue;
+      }
+
+      td.week span {
+        color: $major-dark-blue;
+      }
+    }
+  }
+}
+
+.m-t-10 { margin-top: 10px; }
+.m-t-20 { margin-top: 20px; }
+.font-10 { font-size: 10px !important; }

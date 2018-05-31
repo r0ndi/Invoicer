@@ -1,0 +1,26 @@
+@import '../../../../styles/include';
+
+.breadcrumb {
+  background: $white;
+  float: right;
+  padding: 10px;
+  line-height: normal;
+
+  &__item {
+    cursor: pointer;
+    font-size: 0.8em;
+
+    a {
+      color: $dark-grey;
+
+    }
+
+    +.active {
+      color: $major-dark-blue;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

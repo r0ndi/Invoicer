@@ -1,0 +1,25 @@
+@import '../../styles/include';
+
+.documentation {
+  h3 {
+    font-size: 1.2em;
+    color: $dark-grey;
+    margin-top: 20px;
+  }
+
+  p {
+    margin: 0 0 0 10px;
+  }
+
+  &__main-info {
+    margin-bottom: 30px !important;;
+  }
+  &__footer {
+    margin-top: 30px !important;
+
+    i {
+      font-size: 0.9em;
+      vertical-align: middle;
+    }
+  }
+}

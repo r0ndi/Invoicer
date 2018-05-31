@@ -1,0 +1,58 @@
+<ul class="nav flex-column nav-items">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/home">
+      <i class="material-icons">home</i>
+      <span>Dashboard</span>
+    </a>
+  </li>
+
+  <li class="nav-item dropdown" dropdown>
+    <a class="nav-link" dropdownToggle role="button">
+      <i class="material-icons">insert_drive_file</i>
+      <span>Dokumenty</span>
+      <i class="material-icons float-right d-none d-md-none d-lg-inline">chevron_left</i>
+    </a>
+    <ul *dropdownMenu class="dropdown-menu">
+      <li class="nav-link"><a routerLink="/document/create"><i class="material-icons">chevron_right</i> Utwórz dokument</a></li>
+      <li class="nav-link"><a routerLink="/document/list"><i class="material-icons">chevron_right</i> Lista dokumentów</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="material-icons">directions_car</i>
+      <span>Kilometrówka</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="material-icons">assignment_ind</i>
+      <span>Kontrahneci</span>
+      <i class="material-icons float-right d-none d-md-none d-lg-inline">chevron_left</i>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="material-icons">supervisor_account</i>
+      <span>Profil</span>
+      <i class="material-icons float-right d-none d-md-none d-lg-inline">chevron_left</i>
+    </a>
+  </li>
+
+  <li class="nav-item nav-items__top_line">
+    <a class="nav-link" routerLink="/documentation">
+      <i class="material-icons">info</i>
+      <span>Dokumentacja</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" (click)="showApplicationVersion()">
+      <i class="material-icons">public</i>
+      <span>Changelog</span>
+      <span class="badge badge-warning float-right">{{applicationVersion}}</span>
+    </a>
+  </li>
+</ul>

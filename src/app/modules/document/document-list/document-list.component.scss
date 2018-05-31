@@ -1,0 +1,19 @@
+@import "../../../styles/include";
+
+.document-list {
+  font-family: $font-family;
+
+  &__white-box {
+    background: $white;
+    margin: 0;
+    padding: 20px 0;
+
+    i {
+      font-size: 15px;
+      line-height: 15px;
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+      padding: 0;
+    }
+  }
+}

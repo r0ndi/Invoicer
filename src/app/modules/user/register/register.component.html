@@ -1,0 +1,64 @@
+<div class="max-page-size register-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 offset-md-2 register-box">
+        <div class="row">
+
+          <div class="col-md-12 col-lg-5 register-box__left">
+            <div class="row">
+              <div class="col">
+                <h2>Utwórz konto</h2>
+                <p>Poznaj możliwości naszej aplikacji do optymalnego zarządzania swoimi fakturami.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-7 register-box__right">
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+              <div class="row">
+                <div class="col form-input" [ngClass]="{'form-input__invalid': registerForm.get('firstName').invalid && registerForm.get('firstName').touched, 'form-input__active': registerForm.get('firstName').dirty}">
+                  <input type="text" id="firstName" name="firstName" formControlName="firstName">
+                  <label for="firstName">Imię</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col form-input" [ngClass]="{'form-input__invalid': registerForm.get('lastName').invalid && registerForm.get('lastName').touched, 'form-input__active': registerForm.get('lastName').dirty}">
+                  <input type="text" id="lastName" name="lastName" formControlName="lastName">
+                  <label for="lastName">Nazwisko</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col form-input" [ngClass]="{'form-input__invalid': registerForm.get('email').invalid && registerForm.get('email').touched, 'form-input__active': registerForm.get('email').dirty}">
+                  <input type="text" id="email" name="email" formControlName="email">
+                  <label for="email">Adres e-mail</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col form-input" [ngClass]="{'form-input__invalid': registerForm.get('password').invalid && registerForm.get('password').touched, 'form-input__active': registerForm.get('password').dirty}">
+                  <input type="password" id="password" name="password" formControlName="password">
+                  <label for="firstName">Hasło</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-5 offset-3">
+                  <button type="submit" class="btn btn-dark" [disabled]="registerForm.invalid">Zarejestruj</button>
+                </div>
+              </div>
+
+              <div class="row align-items-end">
+                <div class="col">
+                  <p>Masz już konto? <a routerLink="/user/login">Zaloguj się teraz!</a></p>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container header-container">
+  <div class="row">
+    <div class="col-5">
+      <i class="material-icons" (click)="openNavigation()">menu</i>
+      <i class="material-icons d-none d-md-inline">fullscreen</i>
+      <i class="material-icons d-none d-md-inline">search</i>
+    </div>
+    <div class="col-7 float-right text-right">
+      <div class="dropdown" dropdown>
+        <a dropdownToggle role="button">
+          Witaj <strong>{{ userInfo.getFirstName() }}!</strong>
+          <span class="initials-avatar">{{ userInfo.getDisplayName() | avatarInitials }}</span>
+        </a>
+        <ul *dropdownMenu class="dropdown-menu">
+          <li class="text-center"><strong>{{ userInfo.getDisplayName() }}</strong></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Ustawienia profilu</a></li>
+          <li><a href="#">Pomoc</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a (click)="signOut()">Wyloguj się</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row header-container__page-info">
+      <div class="col">
+        <h2 class="page-title">{{ titleService.getTitle() }}</h2>
+      </div>
+      <div class="col d-none d-md-block">
+        <app-breadcrumb></app-breadcrumb>
+      </div>
+  </div>
+
+</div>

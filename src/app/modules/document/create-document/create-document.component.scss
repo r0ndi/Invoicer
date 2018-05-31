@@ -1,0 +1,79 @@
+@import "../../../styles/include";
+
+.create-document {
+  font-family: $font-family;
+
+  &__white-box {
+    background: $white;
+    margin: 0;
+    padding: 20px;
+
+    h6 {
+      color: $dark-grey;
+      margin: 10px 0 30px;
+      font-size: 20px;
+
+      i {
+        font-size: 22px;
+        line-height: 22px;
+        vertical-align: top;
+        padding: 0;
+        margin: 0;
+
+        &:first-child {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  &__add-position {
+    padding: 0.15em 0.5em 0.15em 0.3em;
+    font-size: 0.7em;
+    margin-top: -3px;
+
+    i {
+      font-size: 1em !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  &__remove-position {
+    float: right !important;
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    color: $red-error;
+    font-size: 1.2em;
+  }
+
+  &__positions {
+    &__position {
+      padding-top: 10px;
+
+      @media screen and (max-width: $screen-sm-max) {
+        border-top: 1px solid $dark-grey;
+
+        &:first-child {
+          border: none;
+        }
+      }
+    }
+  }
+
+  &__positions-summary {
+    padding-top: 20px;
+    color: $grey;
+
+    span {
+      color: $dark-grey;
+    }
+  }
+
+  button {
+    i {
+      line-height: 1px;
+      vertical-align: middle;
+    }
+  }
+}

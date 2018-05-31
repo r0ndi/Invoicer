@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,300,100,500,900&subset=latin,latin-ext");
+body {
+  margin: 0;
+  padding: 0; }
+
+form .form-input {
+  -webkit-appearance: none;
+  transition: background 0s ease-out;
+  position: relative;
+  height: 40px;
+  margin: 20px 0;
+  padding: 0 10px;
+  top: 0; }
+  form .form-input.d-md-inline-flex {
+    margin-top: 0 !important; }
+  form .form-input label {
+    position: absolute;
+    pointer-events: none;
+    line-height: 16px;
+    top: 7px;
+    left: 10px;
+    color: #637282; }
+  form .form-input select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    line-height: 30px;
+    padding: 5px 0; }
+  form .form-input input,
+  form .form-input select {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid #D0D8E9;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 41px;
+    margin: 0;
+    padding: 5px; }
+    form .form-input input:focus,
+    form .form-input select:focus {
+      border-bottom: 1px solid #1F2A40; }
+      form .form-input input:focus + label,
+      form .form-input select:focus + label {
+        top: -13px;
+        font-size: 0.9em;
+        transition: all 0.5s ease; }
+  form .form-input__active input,
+  form .form-input__active select {
+    border-bottom: 1px solid #1F2A40; }
+  form .form-input__active label {
+    top: -13px;
+    font-size: 0.9em;
+    transition: all 0.5s ease; }
+  form .form-input__invalid input,
+  form .form-input__invalid select {
+    border-bottom: 1px solid #8f1d2e;
+    transition: all 1s ease; }
+    form .form-input__invalid input + label,
+    form .form-input__invalid select + label {
+      color: #8f1d2e; }
+
+.home-component__stats-widget {
+  background: #ffffff;
+  padding: 25px;
+  min-height: 30px;
+  margin-top: 20px;
+  border-radius: 5px; }
+  .home-component__stats-widget h3 {
+    font-size: 1.2em;
+    color: #637282;
+    margin-bottom: 0; }
+  .home-component__stats-widget span {
+    font-size: 0.9em;
+    color: #D0D8E9; }
+  .home-component__stats-widget p {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 35px; }
+    .home-component__stats-widget p i {
+      line-height: 35px; }
+
+/*# sourceMappingURL=home.component.css.map */

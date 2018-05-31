@@ -1,0 +1,57 @@
+@import '../../../../styles/include';
+
+.nav-items {
+  margin-top: 30px;
+
+  a {
+    color: $grey;
+    padding-left: 10px;
+
+    span {
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    i {
+      margin-right: 5px;
+      font-size: 18px;
+      vertical-align: top;
+      line-height: 25px;
+    }
+
+    .active {
+      color: $white;
+    }
+
+    .badge {
+      padding: 0.15em 0.4em;
+      margin-top: 3px;
+    }
+  }
+
+  .dropdown-menu {
+    position: relative;
+    display: block;
+    background: none;
+    border: none;
+    color: $grey;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 0;
+
+    .nav-link {
+      padding: 5px 0 0;
+      vertical-align: middle;
+
+      i {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__top_line {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid lighten($major-dark-blue, 10);
+  }
+}

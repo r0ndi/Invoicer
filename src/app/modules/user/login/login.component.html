@@ -1,0 +1,50 @@
+<div class="max-page-size login-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 offset-md-2 login-box">
+        <div class="row">
+
+          <div class="col-md-12 col-lg-5 login-box__left">
+            <div class="row">
+              <div class="col">
+                <h2>Zaloguj się</h2>
+                <p>Poznaj możliwości naszej aplikacji do optymalnego zarządzania swoimi fakturami.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-7 login-box__right">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+              <div class="row">
+                <div class="col form-input" [ngClass]="{'form-input__invalid': loginForm.get('login').invalid && loginForm.get('login').touched, 'form-input__active': loginForm.get('login').dirty}">
+                  <input type="text" id="login" name="login" formControlName="login">
+                  <label for="login">Adres e-mail</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col form-input" [ngClass]="{'form-input__invalid': loginForm.get('password').invalid && loginForm.get('password').touched, 'form-input__active': loginForm.get('password').dirty}">
+                  <input type="password" id="password" name="password" formControlName="password">
+                  <label for="password">Hasło</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-5 offset-3">
+                  <button type="submit" class="btn btn-dark" [disabled]="loginForm.invalid">Zaloguj</button>
+                </div>
+              </div>
+
+              <div class="row align-items-end">
+                <div class="col">
+                  <p>Nie ma jeszcze konta? <a routerLink="/user/register">Zarejestruj się teraz!</a></p>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

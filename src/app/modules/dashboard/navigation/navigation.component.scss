@@ -1,0 +1,22 @@
+@import '../../../styles/include';
+
+.navigation-container {
+  .container {
+    padding: 50px 0;
+  }
+
+  &__header {
+    font-family: $quicksand;
+    color: $blue-header !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: 0 20px;
+
+    i {
+      float: right;
+      font-size: 22px;
+    }
+  }
+}

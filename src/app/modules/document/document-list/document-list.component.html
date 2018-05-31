@@ -1,0 +1,38 @@
+<div class="container document-list">
+  <div class="row">
+    <div class="col-12 m-t-10">
+      <div class="row document-list__white-box">
+        <div class="col">
+          <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped">
+            <thead>
+              <tr>
+                <th>Typ</th>
+                <th>Numer</th>
+                <th>Kupujący</th>
+                <th>Wartość</th>
+                <th>Data</th>
+                <th>Status</th>
+                <th class="text-center">Akcje</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let document of documents">
+                <td>{{ document.documentType.name }}</td>
+                <td>{{ document.number }}</td>
+                <td>{{ document.customerName }}</td>
+                <td>{{ document.grossAmount | priceFormat }}</td>
+                <td>{{ document.dateCreated | dateFormat }}</td>
+                <td>{{ document.internalStatus.name }}</td>
+                <td class="text-center">
+                  <i class="material-icons" (click)="getDocumentPdf(document.id)">archive</i>
+                  <i class="material-icons" [routerLink]="['/document/edit', document.id]">edit</i>
+                  <i class="material-icons red-color" (click)="cancelDocument(document.id)">remove_circle_outline</i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

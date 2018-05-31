@@ -1,0 +1,35 @@
+@import '../../../styles/include';
+
+.header-container {
+  i {
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .dropdown {
+    .dropdown-menu {
+      top: 80% !important;
+      right: 0 !important;
+      left: auto !important;
+      background: $light-grey;
+
+      li {
+        line-height: 20px;
+        text-transform: none;
+        text-decoration: none;
+        padding: 10px;
+
+        a {
+          color: $dark-grey;
+        }
+
+        &.divider {
+          border-top: 1px solid $grey;
+          line-height: 0;
+          padding: 5px 0 0;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

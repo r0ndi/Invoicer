@@ -1,0 +1,91 @@
+@import '../../../styles/include';
+
+.login-body {
+  background: url($absoluteAssetsImagesUrl + $login-template-background) no-repeat !important;
+  background-size: cover !important;
+
+  @media screen and (max-width: $screen-sm-min) {
+    background: $grey !important;
+  }
+}
+
+.login-box {
+  padding: 0;
+  margin-top: 12.5%;
+  margin-bottom: 12.5%;
+  overflow: hidden;
+  background: #FFF;
+  min-height: 400px;
+  border-radius: 5px;
+
+  @media screen and (max-width: $screen-sm-min) {
+    margin-top: 10px;
+    border-radius: 0;
+  }
+
+  &__left {
+    display: inline-block;
+    background: url($absoluteAssetsImagesUrl + $login-template-small-background) no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    padding: 30px 30px 10px;
+    color: #FFF;
+
+    @media screen and (max-width: $screen-sm-max) {
+      background: $major-dark-blue;
+      min-height: 50px;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+
+    h2 {
+      font-size: 2.7em;
+      margin-top: 0;
+      font-weight: 300;
+    }
+  }
+
+  &__right {
+    display: inline-block;
+    padding: 70px 70px 0 50px;
+
+    input {
+      border-bottom: 1px solid $grey;
+      outline: none;
+
+      + label {
+        left: 15px;
+      }
+    }
+
+    .form-input {
+      margin: 20px 0;
+      padding: 0 15px;
+    }
+
+    button[type="submit"] {
+      border-radius: 0;
+      margin-top: 50px;
+      padding: 10px 50px;
+      background: $dark-blue;
+      border-color: $dark-blue;
+
+      &:hover {
+        background: $light-blue;
+        border-color: $light-blue;
+      }
+      &:disabled {
+        background: $light-blue;
+        border-color: $light-blue;
+      }
+    }
+
+    p {
+      font-size: 0.9em;
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}

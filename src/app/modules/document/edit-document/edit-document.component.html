@@ -1,0 +1,291 @@
+<form (ngSubmit)="editDocument(documentForm)" [formGroup]="documentForm">
+  <div class="container edit-document">
+    <div class="row">
+
+      <div class="col-12 m-t-10">
+        <div class="row edit-document__white-box">
+          <div class="col">
+            <h6><i class="material-icons">business</i> Podstawowe informacje</h6>
+
+            <input type="hidden" formControlName="id" />
+
+            <div class="col">
+              <div class="row">
+                <div class="col col-md-6 form-input form-input__active"
+                     [ngClass]="{'form-input__invalid': documentForm.get('documentType').invalid && (documentForm.get('documentType').touched ||  documentFormSent)}">
+                  <select class="form-control" id="documentType" formControlName="documentType">
+                    <option *ngFor="let documentType of documentTypes" [(ngValue)]="documentType.name">
+                      {{ documentType.name }}
+                    </option>
+                  </select>
+                  <label for="documentType">Typ dokumentu</label>
+                </div>
+
+                <div class="col col-md-6 form-input"
+                     [ngClass]="{'form-input__invalid': documentForm.get('number').invalid && (documentForm.get('number').touched ||  documentFormSent), 'form-input__active': documentForm.get('number').value != ''}">
+                  <input type="text" class="form-control" id="number"
+                         formControlName="number"/>
+                  <label for="number">Numer / opis dokumentu</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col form-input"
+                     [ngClass]="{'form-input__invalid': documentForm.get('dateSell').invalid && (documentForm.get('dateSell').touched ||  documentFormSent), 'form-input__active': documentForm.get('dateSell').value !== ''}">
+                  <input type="text" bsDatepicker class="form-control" id="dateSell" formControlName="dateSell"/>
+                  <label for="dateSell">Data sprzedaży</label>
+                </div>
+
+                <div class="col form-input"
+                     [ngClass]="{'form-input__invalid': documentForm.get('dateIssue').invalid && (documentForm.get('dateIssue').touched ||  documentFormSent), 'form-input__active': documentForm.get('dateIssue').value !== ''}">
+                  <input type="text" bsDatepicker class="form-control" id="dateIssue" formControlName="dateIssue"/>
+                  <label for="dateIssue">Data wystawienia</label>
+                </div>
+
+                <div class="col form-input"
+                     [ngClass]="{'form-input__invalid': documentForm.get('placeIssue').invalid && (documentForm.get('placeIssue').touched ||  documentFormSent), 'form-input__active': documentForm.get('placeIssue').value != ''}">
+                  <input type="text" class="form-control" id="placeIssue" formControlName="placeIssue"/>
+                  <label for="placeIssue">Miejsce wystawienia</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 m-t-20">
+        <div class="row edit-document__white-box">
+          <div class="col">
+            <h6>
+              <i class="material-icons">person</i> Sprzedawca
+              <i class="material-icons float-right">search</i>
+            </h6>
+
+            <div class="col form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('sellerName').invalid && (documentForm.get('sellerName').touched ||  documentFormSent), 'form-input__active': documentForm.get('sellerName').value != ''}">
+              <input type="text" class="form-control" id="sellerName" formControlName="sellerName"/>
+              <label for="sellerName">Nazwa</label>
+            </div>
+
+            <div class="col form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('sellerNip').invalid && (documentForm.get('sellerNip').touched ||  documentFormSent), 'form-input__active': documentForm.get('sellerNip').value != ''}">
+              <input type="text" class="form-control" id="sellerNip" formControlName="sellerNip"/>
+              <label for="sellerNip">NIP</label>
+            </div>
+
+            <div class="col form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('sellerAddress').invalid && (documentForm.get('sellerAddress').touched ||  documentFormSent), 'form-input__active': documentForm.get('sellerAddress').value != ''}">
+              <input type="text" class="form-control" id="sellerAddress" formControlName="sellerAddress"/>
+              <label for="sellerAddress">Adres</label>
+            </div>
+
+            <div class="col col-md-7 d-md-inline-flex form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('sellerCity').invalid && (documentForm.get('sellerCity').touched ||  documentFormSent), 'form-input__active': documentForm.get('sellerCity').value != ''}">
+              <input type="text" class="form-control" id="sellerCity" formControlName="sellerCity"/>
+              <label for="sellerCity">Miasto</label>
+            </div>
+
+            <div class="col col-md-4 d-md-inline-flex float-right form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('sellerPostcode').invalid && (documentForm.get('sellerPostcode').touched ||  documentFormSent), 'form-input__active': documentForm.get('sellerPostcode').value != ''}">
+              <input type="text" class="form-control" id="sellerPostcode" formControlName="sellerPostcode"/>
+              <label for="sellerPostcode">Kod pocztowy</label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 m-t-20">
+        <div class="row edit-document__white-box">
+          <div class="col">
+            <h6>
+              <i class="material-icons">person</i> Nabywca
+              <i class="material-icons float-right">search</i>
+            </h6>
+
+            <div class="col form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('customerName').invalid && (documentForm.get('customerName').touched ||  documentFormSent), 'form-input__active': documentForm.get('customerName').value != ''}">
+              <input type="text" class="form-control" id="customerName" formControlName="customerName"/>
+              <label for="customerName">Nazwa</label>
+            </div>
+
+            <div class="col form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('customerNip').invalid && (documentForm.get('customerNip').touched ||  documentFormSent), 'form-input__active': documentForm.get('customerNip').value != ''}">
+              <input type="text" class="form-control" id="customerNip" formControlName="customerNip"/>
+              <label for="customerNip">NIP</label>
+            </div>
+
+            <div class="col form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('customerAddress').invalid && (documentForm.get('customerAddress').touched ||  documentFormSent), 'form-input__active': documentForm.get('customerAddress').value != ''}">
+              <input type="text" class="form-control" id="customerAddress" formControlName="customerAddress"/>
+              <label for="customerAddress">Adres</label>
+            </div>
+
+            <div class="col col-md-7 d-md-inline-flex form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('customerCity').invalid && (documentForm.get('customerCity').touched ||  documentFormSent), 'form-input__active': documentForm.get('customerCity').value != ''}">
+              <input type="text" class="form-control" id="customerCity" formControlName="customerCity"/>
+              <label for="customerCity">Miasto</label>
+            </div>
+
+            <div class="col col-md-4 d-md-inline-flex float-right form-input"
+                 [ngClass]="{'form-input__invalid': documentForm.get('customerPostcode').invalid && (documentForm.get('customerPostcode').touched ||  documentFormSent), 'form-input__active': documentForm.get('customerPostcode').value != ''}">
+              <input type="text" class="form-control" id="customerPostcode" formControlName="customerPostcode"/>
+              <label for="customerPostcode">Kod pocztowy</label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 m-t-20">
+        <div class="row edit-document__white-box">
+          <div class="col">
+            <h6>
+              <i class="material-icons">apps</i> Pozycje na dokumencie
+              <button class="btn btn-sm btn-success float-right edit-document__add-position" type="button"
+                      (click)="addPosition()"><i class="material-icons">add</i> Dodaj pozycje
+              </button>
+            </h6>
+
+            <div class="col edit-document__positions" formArrayName="positions">
+              <div class="edit-document__positions__position"
+                   *ngFor="let position of documentForm.get('positions').controls; let i = index;">
+                <div class="row" [formGroupName]="i">
+                  <input type="hidden" formControlName="id" />
+
+                  <div class="col col-md-7 form-input"
+                       [ngClass]="{'form-input__invalid': position.get('positionName').invalid && (position.get('positionName').touched ||  documentFormSent), 'form-input__active': position.get('positionName').value != ''}">
+                    <input type="text" class="form-control" id="name" formControlName="positionName"/>
+                    <label for="name">Nazwa towaru lub usługi</label>
+                  </div>
+
+                  <div class="col col-md-1 form-input form-input__active"
+                       [ngClass]="{'form-input__invalid': position.get('unit').invalid && (position.get('unit').touched ||  documentFormSent)}">
+                    <select class="form-control" id="unit" formControlName="unit">
+                      <option *ngFor="let unit of units" [(ngValue)]="unit.name">{{ unit.name }}</option>
+                    </select>
+                    <label for="unit">Jm.</label>
+                  </div>
+
+                  <div class="col col-md-1 form-input"
+                       [ngClass]="{'form-input__invalid': position.get('quantity').invalid && (position.get('quantity').touched ||  documentFormSent), 'form-input__active': position.get('quantity').value != ''}">
+                    <input type="text" class="form-control" id="quantity" formControlName="quantity"
+                           (keyup)="calculateSummary()"/>
+                    <label for="quantity">Ilość</label>
+                  </div>
+
+                  <div class="col col-md-2 form-input"
+                       [ngClass]="{'form-input__invalid': position.get('price').invalid && (position.get('price').touched ||  documentFormSent), 'form-input__active': position.get('price').value != ''}">
+                    <input type="text" class="form-control" id="price" formControlName="price"
+                           (keyup)="calculateSummary()"/>
+                    <label for="price">Cena netto.</label>
+                  </div>
+
+                  <div class="col col-md-1 form-input form-input__active"
+                       [ngClass]="{'form-input__invalid': position.get('taxRate').invalid && (position.get('taxRate').touched ||  documentFormSent)}">
+                    <select class="form-control" id="taxRate" formControlName="taxRate" (change)="calculateSummary()">
+                      <option *ngFor="let taxRate of taxRates" [ngValue]="taxRate">{{ taxRate.rate }}</option>
+                    </select>
+                    <label for="taxRate">VAT</label>
+
+                    <span class="material-icons edit-document__remove-position"
+                          *ngIf="i > 0 || documentForm.get('positions').controls.length > 1"
+                          (click)="deletePosition(i)">close</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col edit-document__positions-summary">
+              <div class="row">
+                <div class="col">
+                  Wartość netto: <span>{{ positionsSummary.getSumNetAmount() | priceFormat }}</span>
+                </div>
+                <div class="col">
+                  Wartość VAT: <span>{{ positionsSummary.getSumTaxAmount() | priceFormat }}</span>
+                </div>
+                <div class="col">
+                  Wartość brutto: <span>{{ positionsSummary.getSumGrossAmount() | priceFormat }}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 m-t-20">
+        <div class="row edit-document__white-box">
+          <div class="col">
+            <h6><i class="material-icons">group_work</i> Informacje końcowe</h6>
+
+            <div class="col">
+              <div class="row">
+                <div class="col col-md-4 form-input form-input__active"
+                     [ngClass]="{'form-input__invalid': documentForm.get('status').invalid && (documentForm.get('status').touched ||  documentFormSent)}">
+                  <select class="form-control" id="status" formControlName="status">
+                    <option *ngFor="let status of statuses" [(ngValue)]="status.name">{{ status.name }}</option>
+                  </select>
+                  <label for="status">Status dokumentu</label>
+                </div>
+
+                <div class="col col-md-4 form-input form-input__active"
+                     [ngClass]="{'form-input__invalid': documentForm.get('paymentMethod').invalid && (documentForm.get('paymentMethod').touched ||  documentFormSent)}">
+                  <select class="form-control" id="paymentMethod" formControlName="paymentMethod">
+                    <option *ngFor="let paymentMethod of paymentMethods" [(ngValue)]="paymentMethod.name">{{
+                      paymentMethod.name
+                      }}
+                    </option>
+                  </select>
+                  <label for="paymentMethod">Sposób płatności</label>
+                </div>
+
+                <div class="col col-md-4 form-input form-input__active"
+                     [ngClass]="{'form-input__invalid': documentForm.get('currency').invalid && (documentForm.get('currency').touched ||  documentFormSent)}">
+                  <select class="form-control" id="currency" formControlName="currency">
+                    <option *ngFor="let currency of currencies;" [(ngValue)]="currency.name">{{ currency.name }}
+                    </option>
+                  </select>
+                  <label for="currency">Waluta</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-4 form-input"
+                     [ngClass]="{'form-input__invalid': documentForm.get('termOfPayment').invalid && (documentForm.get('termOfPayment').touched ||  documentFormSent), 'form-input__active': documentForm.get('termOfPayment').value > 0}">
+                  <input type="text" bsDatepicker class="form-control" id="termOfPayment"
+                         formControlName="termOfPayment"/>
+                  <label for="termOfPayment">Termin płatności</label>
+                </div>
+
+                <div class="col col-2 form-input"
+                     [ngClass]="{'form-input__invalid': documentForm.get('valueAmountPaid').invalid && (documentForm.get('valueAmountPaid').touched ||  documentFormSent), 'form-input__active': documentForm.get('valueAmountPaid').value != ''}">
+                  <input type="text" class="form-control" id="valueAmountPaid" formControlName="valueAmountPaid"/>
+                  <label for="valueAmountPaid">Kwota</label>
+                </div>
+
+                <div class="col col-6 form-input"
+                     [ngClass]="{'form-input__invalid': documentForm.get('bankNo').invalid && (documentForm.get('bankNo').touched ||  documentFormSent), 'form-input__active': documentForm.get('bankNo').value != ''}">
+                  <input type="text" class="form-control" id="bankNo" formControlName="bankNo"/>
+                  <label for="bankNo">Numer konta</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col m-t-20">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-success float-right" [disabled]="documentForm.invalid" type="submit">
+              <i class="material-icons">build</i> Edytuj dokument
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>
